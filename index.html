@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dictionary</title>
+</head>
+<body class="bg-gradient-to-l from-sky-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% text-sky-950 font-mono">
+    <h1 class="grid grid-flow-col justify-center underline font-bold text-3xl">DICTIONARY</h1>
+   <div>
+     <form id="f1">
+        <div class="grid grid-flow-col gap-x-2 xl:grid-cols-7 md:grid-cols-3 ">
+         <div class="py-5 px-4"><input type="text" placeholder="Enter a word" name="v" class="focus:border-blue-950 border-2 border-solid "/></div>
+         <div class="py-5"><button type="submit" form="form1" value="value" id="srchbtn" class="bg-purple-600 hover:bg-purple-400 text-black font-bold px-4 py-1 rounded-full">SEARCH</button></div>
+        </div>
+     </form>
+     
+      <div class="grid grid-cols-2">
+        <div id="word" class="w-fit font-bold px-4"></div> 
+        <div id="b1" class="w-fit"><button type="button" id="audio"><img src="loudspeaker-computer-icons-symbol-speaker-icon-fc40b778676af051e092c2321cde1d4e.png" width= "55rem" height="50"></button></div>
+      </div>
+      <div id="err" class="px-4"></div>
+        <div id="phonetic" class="px-3">
+
+            
+        </div>
+        <div id="meaning" class="px-10">
+            <div class="partsofspeech font-bold"></div>
+            <ul id="mean" class="list-disc list-inside">
+                
+            </ul>
+        </div>
+        <div id="typewrite">
+           
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
