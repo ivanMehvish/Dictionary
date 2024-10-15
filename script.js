@@ -16,8 +16,10 @@ var txt = 'For all your Language doubts';
 var speed = 5; // Speed of typewriting
 var messageArray;
 
+// Function to fetch word data and reset fields
 function valueFetch(event) {
-    srchbtn.removeEventListener("click", valueFetch);
+    event.preventDefault();  // Prevents page from reloading
+    srchbtn.removeEventListener("click", valueFetch);  // Remove the event to avoid duplicates
     b1.style.opacity = 1;
     list.innerText = "";
     phonetic.innerText = "";
@@ -28,7 +30,7 @@ function valueFetch(event) {
     getapi(url_api);
 }
 
-// Display data from the API
+// Function to display data from the API
 async function show(data) {
     if (data.message && data.message !== "") {
         error.innerText = data.message;
@@ -72,14 +74,15 @@ async function show(data) {
             await typewriter2(messageArray[k].definition, defElement);  // Pass the definition text and element
         }
     }
-    srchbtn.addEventListener("click", valueFetch);
+    srchbtn.addEventListener("click", valueFetch);  // Re-add the click event listener
 }
 
+// Function to play pronunciation audio
 function Splay() {
     if (sound) sound.play();
 }
 
-// Fetch data from the API
+// Function to fetch data from the API
 async function getapi(url_api) {
     sound = "";
     const response = await fetch(url_api);
