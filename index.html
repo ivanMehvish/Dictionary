@@ -6,34 +6,59 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Dictionary</title>
 </head>
-<body class="bg-gradient-to-l from-sky-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% text-sky-950 font-mono">
-    <h1 class="grid grid-flow-col justify-center underline font-bold text-3xl">DICTIONARY</h1>
-   <div>
-     <form id="f1">
-        <div class="grid grid-flow-col gap-x-2 xl:grid-cols-7 md:grid-cols-3 ">
-         <div class="py-5 px-4"><input type="text" placeholder="Enter a word" name="v" class="focus:border-blue-950 border-2 border-solid "/></div>
-         <div class="py-5"><button type="submit" form="form1" value="value" id="srchbtn" class="bg-purple-600 hover:bg-purple-400 text-black font-bold px-4 py-1 rounded-full">SEARCH</button></div>
-        </div>
-     </form>
-     
-      <div class="grid grid-cols-2">
-        <div id="word" class="w-fit font-bold px-4"></div> 
-        <div id="b1" class="w-fit"><button type="button" id="audio"><img src="loudspeaker-computer-icons-symbol-speaker-icon-fc40b778676af051e092c2321cde1d4e.png" width= "55rem" height="50"></button></div>
-      </div>
-      <div id="err" class="px-4"></div>
-        <div id="phonetic" class="px-3">
+<body class="bg-gradient-to-l from-sky-500 to-emerald-500 text-sky-950 font-mono min-h-screen flex items-center justify-center">
+    <div class="bg-white/70 backdrop-blur-lg shadow-md rounded-lg p-8 w-full max-w-3xl mx-4">
+        <!-- Page Title -->
+        <h1 class="text-center font-extrabold text-4xl text-sky-600 underline mb-6">DICTIONARY</h1>
 
-            
+        <!-- Search Form -->
+        <form id="f1" class="flex flex-col md:flex-row gap-4 items-center justify-center mb-6">
+            <input 
+                type="text" 
+                placeholder="Enter a word" 
+                name="v" 
+                class="border border-gray-300 rounded-lg focus:border-sky-600 px-4 py-2 w-full md:w-auto"
+            />
+            <button 
+                type="submit" 
+                id="srchbtn" 
+                class="bg-purple-600 hover:bg-purple-500 text-white font-bold px-6 py-2 rounded-lg transition duration-300 ease-in-out"
+            >
+                SEARCH
+            </button>
+        </form>
+
+        <!-- Word and Audio Button -->
+        <div class="flex items-center gap-3 mb-4">
+            <div id="word" class="text-2xl font-semibold text-sky-700"></div>
+            <div id="b1" style="opacity: 0;">
+                <button 
+                    type="button" 
+                    id="audio" 
+                    class="bg-sky-600 hover:bg-sky-500 rounded-full p-2 transition duration-300 ease-in-out"
+                >
+                    <img 
+                        src="loudspeaker-computer-icons-symbol-speaker-icon-fc40b778676af051e092c2321cde1d4e.png" 
+                        alt="Audio" 
+                        class="w-10 h-10"
+                    />
+                </button>
+            </div>
         </div>
-        <div id="meaning" class="px-10">
-            <div class="partsofspeech font-bold"></div>
-            <ul id="mean" class="list-disc list-inside">
-                
+
+        <!-- Error Message -->
+        <div id="err" class="text-red-600 font-medium mb-4"></div>
+
+        <!-- Phonetic and Meaning -->
+        <div id="phonetic" class="px-3 text-gray-700 text-lg mb-4"></div>
+        <div id="meaning" class="px-10 text-gray-800 text-base max-h-64 overflow-y-auto space-y-2">
+            <ul id="mean" class="list-disc list-inside text-gray-600 space-y-1">
+                <!-- Meanings will be dynamically added here -->
             </ul>
         </div>
-        <div id="typewrite">
-           
-        </div>
+
+        <!-- Optional Typewriting or Extra Content -->
+        <div id="typewrite" class="text-sm text-gray-500 mt-4"></div>
     </div>
     <script src="script.js"></script>
 </body>
