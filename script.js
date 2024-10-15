@@ -17,7 +17,6 @@ var speed = 5; // Speed of typewriting
 var messageArray;
 
 function valueFetch(event) {
-    event.preventDefault();  // Prevent form submission from reloading the page
     srchbtn.removeEventListener("click", valueFetch);
     b1.style.opacity = 1;
     list.innerText = "";
